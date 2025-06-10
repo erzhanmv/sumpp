@@ -1,0 +1,190 @@
+Work
+Erzhan@MacBook-Air-2 ~ % git config --global user.name "Erzhan"
+Erzhan@MacBook-Air-2 ~ % git config --global user.email "Erzhan@kbtu.kz"
+Erzhan@MacBook-Air-2 ~ % git config --global init.defaultBranch main Erzhan@MacBook-Air-2 ~ % git config --global core.autocrlf input
+git config --global core.safecrlf warn Erzhan@MacBook-Air-2 ~ % mkdir work Erzhan@MacBook-Air-2 ~ % cd Desktop bekaryssherman@MacBook-Air-2 Desktop % mkdir work
+Erzhan@MacBook-Air-2 Desktop % cd work Erzhan@MacBook-Air-2 work % touch hello.html Erzhan@MacBook-Air-2 work % git init
+Initialized empty Git repository in /Users/Erzhan/Desktop/ work/.git/
+Erzhan@MacBook-Air-2 work % git add hello.html git commit -m "Initial Commit"
+[main (root-commit) 610686b] Initial Commit
+1 file changed, 1 insertion(+)
+create mode 100644 hello.html Erzhan@MacBook-Air-2 work % git status On branch main
+nothing to commit, working tree clean Erzhan@MacBook-Air-2 work % git status On branch main
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git restore <file>..." to discard changes in working directory)
+modified: hello.html
+no changes added to commit (use "git add" and/or "git commit -a") Erzhan@MacBook-Air-2 work % git add hello.html bekaryssherman@MacBook-Air-2 work % git status
+no changes added to commit (use "git add" and/or "git commit -a") @MacBook-Air-2 work % git add hello.html bekaryssherman@MacBook-Air-2 work % git status
+On branch main
+Changes to be committed:
+(use "git restore --staged <file>..." to unstage)
+modified: hello.html
+ Erzhan@MacBook-Air-2 work % git add a.html git add b.html
+git commit -m "Changes for a and b"
+[main 6ad63e1] Changes for a and b
+3 files changed, 1 insertion(+), 1 deletion(-) create mode 100644 a.html
+create mode 100644 b.html
+Erzhan@MacBook-Air-2 work % git add c.html git commit -m "Unrelated change to c"
+[main 69a3b29] Unrelated change to c
+1 file changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 c.html Erzhan@MacBook-Air-2 work % git commit
+On branch main
+nothing to commit, working tree clean Erzhan@MacBook-Air-2 work % git status
+On branch main
+nothing to commit, working tree clean Erzhan@MacBook-Air-2 work % git add hello.html bekaryssherman@MacBook-Air-2 work % git status
+On branch main
+Changes to be committed:
+(use "git restore --staged <file>..." to unstage) modified: hello.html
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git restore <file>..." to discard changes in working directory)
+modified: hello.html
+Erzhan@MacBook-Air-2 work % git commit -m "Added standard HTML page tags"
+git status
+[main 85276c5] Added standard HTML page tags
+1 file changed, 5 insertions(+), 1 deletion(-) On branch main
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git restore <file>..." to discard changes in working directory)
+modified: hello.html
+
+ no changes added to commit (use "git add" and/or "git commit -a") Erzhan@MacBook-Air-2 work % git add .
+git status
+On branch main
+Changes to be committed:
+(use "git restore --staged <file>..." to unstage)
+modified: hello.html
+Erzhan@MacBook-Air-2 work % git commit -m "Added HTML header"
+[main 18bf47d] Added HTML header
+1 file changed, 2 insertions(+)
+Erzhan@MacBook-Air-2 work % git log
+commit 18bf47ddce5c511727bfdff461d0637efd4453ed (HEAD -> main)
+Author: Erzhan <b_sherman@kbtu.kz>
+Date: Tue Jun 3 14:05:19 2025 +0500
+Added HTML header
+commit 85276c51debf868fa89f64e56a24fad4841df97c Author: Erzhan <Erzhan@kbtu.kz>
+Date: Tue Jun 3 14:05:03 2025 +0500
+Added standard HTML page tags
+commit 69a3b297565d1cc1310b6bbb3673d9cdf17b0deb Author: Erzhan <Erzhan@kbtu.kz>
+Date: Tue Jun 3 14:03:30 2025 +0500
+Unrelated change to c
+commit 6ad63e1eaade0b76546e2a1e1d1553ffa331ef19 Author: Erzhan <Erzhan@kbtu.kz>
+Date: Tue Jun 3 14:03:23 2025 +0500
+Changes for a and b
+Erzhan@MacBook-Air-2 work % git log --pretty=oneline 18bf47ddce5c511727bfdff461d0637efd4453ed (HEAD -> main) Added HTML header 85276c51debf868fa89f64e56a24fad4841df97c Added standard
+
+ HTML page tags
+69a3b297565d1cc1310b6bbb3673d9cdf17b0deb Unrelated change to c
+6ad63e1eaade0b76546e2a1e1d1553ffa331ef19 Changes for a and b 610686b0db338e91ca77826377bf422df9ec7093 Initial Commit Erzhan@MacBook-Air-2 work % git log --all -- pretty=format:"%h %cd %s (%an)" --since="7 days ago"
+18bf47d Tue Jun 3 14:05:19 2025 +0500 Added HTML header (BekarysKbtu)
+85276c5 Tue Jun 3 14:05:03 2025 +0500 Added standard HTML page tags (BekarysKbtu)
+69a3b29 Tue Jun 3 14:03:30 2025 +0500 Unrelated change to c (BekarysKbtu)
+6ad63e1 Tue Jun 3 14:03:23 2025 +0500 Changes for a and b (BekarysKbtu)
+610686b Tue Jun 3 14:01:27 2025 +0500 Initial Commit (BekarysKbtu)
+Erzhan@MacBook-Air-2 work % git log --pretty=format:"%h %ad | %s%d [%an]" --date=short
+18bf47d 2025-06-03 | Added HTML header (HEAD -> main) [BekarysKbtu]
+85276c5 2025-06-03 | Added standard HTML page tags [BekarysKbtu]
+69a3b29 2025-06-03 | Unrelated change to c [BekarysKbtu] 6ad63e1 2025-06-03 | Changes for a and b [BekarysKbtu]
+610686b 2025-06-03 | Initial Commit [BekarysKbtu] bekaryssherman@MacBook-Air-2 work % git config --global format.pretty '%h %ad | %s%d [%an]'
+git config --global log.date short
+Erzhan@MacBook-Air-2 work % git log
+18bf47d 2025-06-03 | Added HTML header (HEAD -> main) [BekarysKbtu]
+85276c5 2025-06-03 | Added standard HTML page tags [BekarysKbtu]
+69a3b29 2025-06-03 | Unrelated change to c [BekarysKbtu] 6ad63e1 2025-06-03 | Changes for a and b [BekarysKbtu]
+610686b 2025-06-03 | Initial Commit [BekarysKbtu] bekaryssherman@MacBook-Air-2 work % git checkout <hash>
+cat hello.html
+zsh: parse error near `\n'
+Erzhan@MacBook-Air-2 work % git checkout <hash>
+zsh: parse error near `\n'
+
+ Erzhan@MacBook-Air-2 work % cat hello.html <html>
+<head> </head> <body>
+<h1>Hello, World!</h1> </body>
+</html>%
+Erzhan@MacBook-Air-2 work % git checkout 18bf47ddce5c511727bfdff461d0637efd4453ed
+Note: switching to '18bf47ddce5c511727bfdff461d0637efd4453ed'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+git switch -c <new-branch-name> Or undo this operation with:
+git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at 18bf47d Added HTML header bekaryssherman@MacBook-Air-2 work % git checkout 18bf47ddce5c511727bfdff461d0637efd4453ed
+cat hello.html
+HEAD is now at 18bf47d Added HTML header <html>
+<head> </head> <body>
+<h1>Hello, World!</h1> </body>
+
+ </html>%
+Erzhan@MacBook-Air-2 work % git switch main cat hello.html
+Switched to branch 'main'
+<html>
+<head> </head> <body>
+<h1>Hello, World!</h1> </body>
+</html>%
+Erzhan@MacBook-Air-2 work % git tag v1
+git log
+18bf47d 2025-06-03 | Added HTML header (HEAD -> main, tag: v1) [BekarysKbtu]
+85276c5 2025-06-03 | Added standard HTML page tags [BekarysKbtu]
+69a3b29 2025-06-03 | Unrelated change to c [BekarysKbtu] 6ad63e1 2025-06-03 | Changes for a and b [BekarysKbtu] 610686b 2025-06-03 | Initial Commit [BekarysKbtu] bekaryssherman@MacBook-Air-2 work % git checkout v1^
+cat hello.html
+Note: switching to 'v1^'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+git switch -c <new-branch-name> Or undo this operation with:
+git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+
+ HEAD is now at 85276c5 Added standard HTML page tags <html>
+<body>
+<h1>Hello, World!</h1>
+</body>
+</html>%
+ERZHAN@MacBook-Air-2 work % git tag v1-beta
+git log
+85276c5 2025-06-03 | Added standard HTML page tags (HEAD, tag: v1-beta) [Erzhan]
+69a3b29 2025-06-03 | Unrelated change to c [ERZHAN] 6ad63e1 2025-06-03 | Changes for a and b [BekarysKbtu]
+610686b 2025-06-03 | Initial Commit [ERZHAN] Erzhan@MacBook-Air-2 work % git checkout v1
+git checkout v1-beta
+Previous HEAD position was 85276c5 Added standard HTML page tags
+HEAD is now at 18bf47d Added HTML header
+Previous HEAD position was 18bf47d Added HTML header
+HEAD is now at 85276c5 Added standard HTML page tags bekaryssherman@MacBook-Air-2 work % git tag
+v1
+v1-beta
+Erzhan@MacBook-Air-2 work % git log main --all
+18bf47d 2025-06-03 | Added HTML header (tag: v1, main) [Erzhan]
+85276c5 2025-06-03 | Added standard HTML page tags (HEAD, tag: v1-beta) [Erzhan]
+69a3b29 2025-06-03 | Unrelated change to c [BekarysKbtu] 6ad63e1 2025-06-03 | Changes for a and b [BekarysKbtu]
+610686b 2025-06-03 | Initial Commit [BekarysKbtu] bekaryssherman@MacBook-Air-2 work % git switch main
+Previous HEAD position was 85276c5 Added standard HTML page tags
+Switched to branch 'main'
+Erzhan@MacBook-Air-2 work % git status
+On branch main
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git restore <file>..." to discard changes in working directory)
+modified: hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a") Erzhan@MacBook-Air-2 work % git restore hello.html
+git status
+cat hello.html
+On branch main
+nothing to commit, working tree clean <html>
+<head> </head> <body>
+<h1>Hello, World!</h1> </body>
+</html>%
+Erzhan@MacBook-Air-2 work % git add hello.html Erzhan@MacBook-Air-2 work % git status
+On branch main
+Changes to be committed:
+(use "git restore --staged <file>..." to unstage) modified: hello.html
+Erzhan@MacBook-Air-2 work % git restore --staged hello.html
+Erzhan@MacBook-Air-2 work % git restore hello.html git status
+On branch main
+nothing to commit, working tree clean
