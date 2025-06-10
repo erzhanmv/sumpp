@@ -5,13 +5,13 @@ Intro:
 print("Hello, World!")
 
 Getting Started:
-bekaryssherman@MacBook-Air-2 ~ % python3 --version
+Erzhan-Air-2 ~ % python3 --version
 Python 3.13.3
-bekaryssherman@MacBook-Air-2 ~ % cd Desktop
-bekaryssherman@MacBook-Air-2 Desktop % cd PP2-Summer
-bekaryssherman@MacBook-Air-2 PP2-Summer % python3 hello.py
+Erzhan@MacBook-Air-2 ~ % cd Desktop
+erzhan@MacBook-Air-2 Desktop % cd PP2-Summer
+Erzhan@MacBook-Air-2 PP2-Summer % python3 hello.py
 Hello, World!
-bekaryssherman@MacBook-Air-2 PP2-Summer % python3
+ERZHAN@MacBook-Air-2 PP2-Summer % python3
 Python 3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print("Hello, World!")
