@@ -35,3 +35,102 @@ diff = date2 - date1
 seconds = diff.total_seconds()
 
 print(f"Difference in seconds: {seconds}")
+
+#GENERATORS #TASK1
+def square_generator(n):
+    for i in range(1, n + 1):
+        yield i ** 2
+
+n = int(input("Write your number: "))
+for i in square_generator(n):
+    print(i)
+
+#task2
+def even_generator(n):
+    for i in range(0, n):
+        if i % 2 == 0:
+           yield i 
+
+n = int(input("Write your number: "))
+for i in even_generator(n):
+    print(i)
+
+#task3
+def divisible(n):
+    for i in range(0, n):
+        if i % 3 == 0 and i % 4 == 0:
+            yield i
+
+n = int(input("Write your number: "))
+for i in divisible(n):
+    print(i)
+
+#task4
+def squares(a, b):
+    for i in range(a, b):
+        yield i ** 2
+
+a = int(input("Write your first number: "))
+b = int(input("Write your second number: "))
+
+for i in squares(a, b):
+    print(i)
+
+#task5
+def down(n):
+    for i in range(n, 0, -1):
+        yield i 
+
+n = int(input("Write your number: "))
+for i in down(n):
+    print(i)
+
+#JSON
+import json
+
+with open("/Users/bekaryssherman/Desktop/PP2-Summer/Lab4/Git tasks/JSON/sample-data.json") as f:
+    data = json.load(f)
+
+print("Interface Status")
+print("=" * 80)
+print(f"{'DN':<50} {'Description':<20} {'Speed':<8} {'MTU':<6}")
+print("-" * 80)
+
+for item in data["imdata"]:
+    attrs = item["l1PhysIf"]["attributes"]
+    dn = attrs.get("dn", "")
+    descr = attrs.get("descr", "")
+    speed = attrs.get("speed", "")
+    mtu = attrs.get("mtu", "")
+    print(f"{dn:<50} {descr:<20} {speed:<8} {mtu:<6}")
+
+#math task1
+import math
+
+degree = int(input("Input degree: "))
+radian = (degree * math.pi) / 180
+
+print(f"Output radian: {radian}")
+#task2
+ = int(input("Height: "))
+a = int(input("Base, first value: "))
+b = int(input("Base, second value: "))
+
+area = (a + b) * h/2
+print(area)
+#task3
+import math
+
+n = int(input("Input number of sides: "))
+a = int(input("Input the length of a side: "))
+
+radian = math.pi / n
+area = (n * math.pow(a, 2))/(4* math.tan(radian))
+
+print(math.floor(area))
+#task4
+l = int(input("Length of base: "))
+h = int(input("Height of parallelogram: "))
+
+area = l * h
+print(float(area))
