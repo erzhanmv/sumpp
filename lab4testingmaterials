@@ -1,0 +1,37 @@
+#task1
+import datetime
+
+x = datetime.datetime.now()
+fda = int(x.strftime("%d")) - 5
+
+print(f"0{fda}", "-" , x.strftime("%m"), "-",   x.strftime("%Y"))
+
+#task2
+import datetime
+
+x = datetime.datetime.now()
+
+y = int(x.strftime("%d")) - 1
+t = int(x.strftime("%d")) + 1
+
+print("Yesterday's date: " , y, "-" , x.strftime("%m"), "-" , x.strftime("%Y"))
+print("Today's date: " , x.strftime("%d"), "-" , x.strftime("%m"), "-" , x.strftime("%Y"))
+print("Tomorrow's date: ", t, "-" , x.strftime("%m"), "-" , x.strftime("%Y"))
+
+#task3
+import datetime
+
+x = datetime.datetime.now()
+clean_time = x.replace(microsecond=0)
+print(clean_time)
+
+#task4
+import datetime
+
+date1 = datetime.datetime(2025, 6, 11, 12, 0, 0)
+date2 = datetime.datetime(2025, 6, 11, 12, 30, 45)
+
+diff = date2 - date1
+seconds = diff.total_seconds()
+
+print(f"Difference in seconds: {seconds}")
