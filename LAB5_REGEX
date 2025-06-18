@@ -1,0 +1,109 @@
+#test1
+import re
+
+txt = input("Введите строку: ")
+checker = r"^ab*$"
+
+result = re.search(checker, txt)
+
+if result:
+    print("Yes")
+else:
+    print("No")
+
+#test2
+import re
+
+txt = input("Введите строку: ")
+checker = r"^ab{2,3}$"
+
+result = re.search(checker, txt)
+
+if result:
+    print("Yes")
+else:
+    print("No")
+
+#test3
+import re
+
+txt = input("Введите строку: ")
+checker = r"[a-z]+\_[a-z]+"
+
+result = re.findall(checker, txt)
+
+if result:
+    print(f"Найдено: {result}")
+else:
+  print("Ничего не найдено")
+
+#test4
+import re
+
+txt = input("Введите строку: ")
+checker = r"[A-Z][a-z]+"
+
+result = re.findall(checker, txt)
+
+if result:
+    print(f"Найдено: {result}")
+else:
+    print("Ничего не найдено")
+
+#test5
+import re
+
+txt = input("Введите строку: ")
+checker = r"^a.*b$"
+
+result = re.search(checker, txt)
+
+if result:
+    print("Yes")
+else:
+    print("No")
+
+#test6
+import re
+
+txt = input("Введите текст: ")
+pattern = r"[ ,.]"
+
+replaced = re.sub(pattern, ":", txt)
+print("Результат:", replaced)
+#test7
+def snake_to_camel(snake_str):
+    parts = snake_str.split('_')
+    camel_str = parts[0] + ''.join(word.capitalize() for word in parts[1:])
+    return camel_str
+
+snake_input = input("Введите строку в snake_case: ")
+camel_output = snake_to_camel(snake_input)
+print("CamelCase:", camel_output)
+
+#test8
+import re
+
+txt = input("Введите строку: ")
+parts = re.findall(r'[A-Z][a-z]*', txt)
+
+print("Результат:", parts)
+
+#test9
+import re
+
+txt = input("Введите строку: ")
+spaced = re.sub(r'(?<!^)(?=[A-Z])', ' ', txt)
+
+print("Результат:", spaced)
+
+#test10
+import re
+
+def camel_to_snake(camel_str):
+    snake_str = re.sub(r'(?<!^)(?=[A-Z])', '_', camel_str).lower()
+    return snake_str
+
+camel_input = input("Введите строку в camelCase: ")
+snake_output = camel_to_snake(camel_input)
+print("snake_case:", snake_output)
